@@ -1,4 +1,8 @@
-# Focus Flow — Complete Project
+project-root
+ ├ package.json
+ ├ app
+ │  └ page.js
+ # Focus Flow — Complete Project
 
 > A full-stack Next.js app (MVP) for a personalized AI study planner.
 
