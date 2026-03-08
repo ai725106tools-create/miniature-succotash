@@ -188,44 +188,44 @@ File: `/utils/scheduler.js`
 
 ```
 repo
- ├ package.json
- ├ pages
- ├ components
- ├ prisma
- └ utils/
-├─ next.config.js
-├─ postcss.config.js
-├─ tailwind.config.js
-├─ prisma/
-│  └─ schema.prisma
-├─ pages/
-│  ├─ _app.js
-│  ├─ index.js
-│  ├─ planner.js
-│  ├─ strengths.js
-│  └─ api/
-│     ├─ generate-plan.js
-│     ├─ tasks.js
-│     ├─ export-ics.js
-│     └─ parse-input.js
-├─ components/
-│  ├─ Nav.jsx
-│  ├─ Sidebar.jsx
-│  ├─ Dashboard.jsx
-│  ├─ PlannerForm.jsx
-│  ├─ TaskList.jsx
-│  ├─ TaskCard.jsx
-│  ├─ HabitTracker.jsx
-│  ├─ StrengthWeakness.jsx
-│  ├─ FocusMode.jsx
-│  ├─ SoundPlayer.jsx
-│  ├─ PDFUploader.jsx
-│  └─ MicroQuiz.jsx
-├─ utils/
-│  ├─ scheduler.js
-│  ├─ ics.js
-│  └─ parser.js
-└─ README.md
+├ package.json
+├ next.config.js
+├ postcss.config.js
+├ tailwind.config.js
+├ README.md
+│
+├ prisma
+│  └ schema.prisma
+│
+├ pages
+│  ├ _app.js
+│  ├ index.js
+│  ├ planner.js
+│  ├ strengths.js
+│  └ api
+│     ├ generate-plan.js
+│     ├ tasks.js
+│     ├ export-ics.js
+│     └ parse-input.js
+│
+├ components
+│  ├ Nav.jsx
+│  ├ Sidebar.jsx
+│  ├ Dashboard.jsx
+│  ├ PlannerForm.jsx
+│  ├ TaskList.jsx
+│  ├ TaskCard.jsx
+│  ├ HabitTracker.jsx
+│  ├ StrengthWeakness.jsx
+│  ├ FocusMode.jsx
+│  ├ SoundPlayer.jsx
+│  ├ PDFUploader.jsx
+│  └ MicroQuiz.jsx
+│
+└ utils
+   ├ scheduler.js
+   ├ ics.js
+   └ parser.js
 ```
 
 > The following blocks include full source code for essential files to get the MVP running locally.
