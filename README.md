@@ -27,16 +27,26 @@
 
 ## 2) Architecture (High-level)
 ```
-User (browser)
-  ↕ HTTPS
-Next.js frontend (pages + components)
-  ↕ /api
-Next.js API routes (serverless) -> Business logic (planner, scheduler, spaced repetition)
-  ↕
-Database (Prisma) -> SQLite (dev) / Postgres (prod like Supabase or PlanetScale)
+User (Browser)
+      │
+      ▼
+Next.js Frontend (Pages + Components)
+      │
+      ▼
+API Routes (/pages/api)
+      │
+      ▼
+Service Layer
+(planner, scheduler, spaced repetition)
+      │
+      ▼
+Repository Layer
+(Prisma database queries)
+      │
+      ▼
+Database
+(PostgreSQL / Supabase / PlanetScale)
 
-Optional: AI microservice (OpenAI) for advanced prioritization and plan conversion (not included in MVP; documented in improvements)
-External: Calendar export (ICS), Push notifications via service worker (future), Audio assets (hosted or CDN)
 ```
 
 ---
@@ -187,28 +197,29 @@ File: `/utils/scheduler.js`
 ## 8) File tree + Full Source Code
 
 ```
-repo
+focus-flow
+│
 ├ package.json
 ├ next.config.js
-├ postcss.config.js
 ├ tailwind.config.js
-├ README.md
+├ postcss.config.js
 │
 ├ prisma
 │  └ schema.prisma
 │
-├ pages
+├ pages                    # FRONTEND ROUTES
 │  ├ _app.js
 │  ├ index.js
 │  ├ planner.js
 │  ├ strengths.js
-│  └ api
+│  │
+│  └ api                   # API ROUTES
 │     ├ generate-plan.js
 │     ├ tasks.js
 │     ├ export-ics.js
 │     └ parse-input.js
 │
-├ components
+├ components               # UI COMPONENTS
 │  ├ Nav.jsx
 │  ├ Sidebar.jsx
 │  ├ Dashboard.jsx
@@ -222,10 +233,29 @@ repo
 │  ├ PDFUploader.jsx
 │  └ MicroQuiz.jsx
 │
-└ utils
-   ├ scheduler.js
-   ├ ics.js
-   └ parser.js
+├ services                 # BUSINESS LOGIC
+│  ├ plannerService.js
+│  ├ schedulerService.js
+│  ├ spacedRepetitionService.js
+│
+├ repositories             # DATABASE QUERIES
+│  ├ taskRepository.js
+│  ├ planRepository.js
+│
+├ lib                      # GLOBAL CONFIG
+│  └ prisma.js
+│
+├ utils                    # SMALL HELPERS
+│  ├ parser.js
+│  ├ scheduler.js
+│  └ ics.js
+│
+├ public                   # STATIC FILES
+│  ├ audio
+│  └ icons
+│
+└ styles
+   └ globals.css
 ```
 
 > The following blocks include full source code for essential files to get the MVP running locally.
