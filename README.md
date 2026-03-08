@@ -1,7 +1,3 @@
-project-root
- ├ package.json
- ├ app
- │  └ page.js
  # Focus Flow — Complete Project
 
 > A full-stack Next.js app (MVP) for a personalized AI study planner.
@@ -191,8 +187,12 @@ File: `/utils/scheduler.js`
 ## 8) File tree + Full Source Code
 
 ```
-focus-flow/
-├─ package.json
+repo
+ ├ package.json
+ ├ pages
+ ├ components
+ ├ prisma
+ └ utils/
 ├─ next.config.js
 ├─ postcss.config.js
 ├─ tailwind.config.js
